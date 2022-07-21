@@ -334,7 +334,16 @@ footer a{
 		width: 500px;
 		grid-template-columns: repeat(3, auto);
 	}
+}
+@media screen and (max-width: 750px){
+	.modal img{
+		width: 400px;
+	}
+	.modal a{
+		font-size: 7em;
+	}
 
+}
 @media screen and (max-width: 700px){
 	.contacto form{
 		height: 250px;
@@ -414,6 +423,12 @@ footer a{
 		width: 400px;
 		grid-template-columns: repeat(2, auto);
 	}
+	.modal img{
+		width: 350px;
+	}
+	.modal a{
+		font-size: 5em;
+	}
 
 @media screen and (max-width: 500px){
 	.catalogo .galeria{
@@ -441,6 +456,12 @@ footer a{
 	.contacto input[type="submit"]{
 		margin-top: 10px;
 		padding: 15px;
+	}
+	.modal img{
+		width: 200px;
+	}
+	.modal a{
+		font-size: 3em;
 	}
 }
 
