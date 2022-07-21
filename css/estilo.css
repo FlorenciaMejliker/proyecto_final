@@ -21,6 +21,7 @@ header{
 	align-items: center;
 	position: fixed;
 	z-index: 1;
+	background-color: white;
 }
 
 header h1 a{
@@ -188,9 +189,7 @@ footer a{
 	cursor: pointer;
 }
 
-.catalogo header{
-	background: white;
-}
+
 .visible{
 	display: flex;
 	flex-wrap: nowrap;
@@ -198,7 +197,7 @@ footer a{
 
 /*ESTILO PARA LA SECCION: Sobre Croquier*/
 .contenido{
-	position: fixed;
+	position: absolute;
 	width: 600px;
 	margin-top: 130px; /*chequear por que esta raro*/
 	margin-left: 100px; /*chequear por que esta raro*/
@@ -282,7 +281,7 @@ footer a{
 
 
 /*MEDIA QUERYIES*/
-@media screen and (max-width: 980px){
+@media screen and (max-width: 1000px){
 	.catalogo .galeria{
 		width: 800px;
 		grid-template-columns: repeat(4, auto);
@@ -310,14 +309,15 @@ footer a{
 	.inicio div.fondo{
 		display: block;
 	}
-}
-@media screen and (max-width: 880px){
 	.catalogo .galeria{
 		width: 700px;
-		grid-template-columns: repeat(4, auto);
+		grid-template-columns: repeat(3, auto);
 		top: 180px;
 		margin: 0 auto;
 	}
+}
+@media screen and (max-width: 880px){
+	
 	.contenido{
 		width: 500px;
 		margin-top: 130px; /*chequear por que esta raro*/
@@ -329,14 +329,12 @@ footer a{
 		left: -60px;
 	}
 }
-@media screen and (max-width: 750px){
+@media screen and (max-width: 800px){
 	.catalogo .galeria{
-		width: 600px;
+		width: 500px;
 		grid-template-columns: repeat(3, auto);
-		top: 180px;
-		margin: 0 auto;
 	}
-}
+
 @media screen and (max-width: 700px){
 	.contacto form{
 		height: 250px;
@@ -396,18 +394,6 @@ footer a{
 		margin-bottom: 5px;
 		margin-top: 0;
 	}
-
-
-	.catalogo .galeria{
-		width: 500px;
-		display: grid;
-		grid-template-columns: repeat(2, auto);
-		gap: 10px;
-		position: absolute;
-		top: 180px;
-		margin: 0 auto;
-	}
-	
 }
 
 @media screen and (max-width: 650px){
@@ -422,5 +408,38 @@ footer a{
 		left: -44px;
 	}
 }
+
+@media screen and (max-width: 600px){
+	.catalogo .galeria{
+		width: 400px;
+		grid-template-columns: repeat(2, auto);
+	}
+
+@media screen and (max-width: 500px){
+	.catalogo .galeria{
+		width: 200px;
+		grid-template-columns: repeat(1, auto);
+	}
+	.contenido{
+		width: 300px;
+		margin-top: 100px; /*chequear por que esta raro*/
+		margin-left: 60px; /*chequear por que esta raro*/
+	}
+	.contacto section{
+		top: 150px;
+		right: 0;
+	}
+	.contacto form{
+		height: 400px;
+		flex-direction: column;
+		margin: 10px auto;
+		align-items: stretch;
+	}
+	.contacto form div{
+		align-items: center;
+		margin: 0 10px;
+	}
+}
+
 /*VER SI HACER PARA 500PX PARA ABAJO*/
 
