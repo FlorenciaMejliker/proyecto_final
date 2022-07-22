@@ -13,7 +13,7 @@ body{
 	font-weight: 300;
 	background-color: #ffffff;
 }
-header{
+header{ /*estiliza el header de toda la web*/
 	padding: 20px;
 	width: 100%;
 	display: flex;
@@ -26,25 +26,25 @@ header{
 	background-color: white;
 }
 
-header h1 a{
+header h1 a{ /* estiliza el titulo principal dentro del header */
 	text-decoration: none;
 	font-family: 'Cutive Mono', monospace;
 	color: #333;
 	font-size: 1.5em;
 	letter-spacing: -4px;
 }
-nav ul{
+nav ul{ /* estiliza la lista que se ve dentro del nav */
 	display: flex;
 	justify-content: center;
 	align-items: center;	
 	list-style: none;
 	margin-right: 30px;
 }
-nav li{
+nav li{ /* estiliza cada punto de la lista dentro del nav */
 	margin-right: 30px;
 	flex-grow: 1;
 }
-nav li a{
+nav li a{ /* estiliza los enlaces, es decir las palabras dentro de la lista del nav*/
 	color: #333;
 	text-decoration: none;
 	display: block;
@@ -52,20 +52,21 @@ nav li a{
 	font-weight: 400;
 	cursor: pointer;
 }
-nav li:first-child{
+nav li:first-child{ /* aca le digo al primer hijo li, dentro del nav que no aparezca en pantalla */
 	display: none;
 }
 
-.abrir,.cerrar{
+.abrir,.cerrar{ /* clases que voy a utilizar en JS */
 	display: none;
 }
 	/*Hasta aca se estilizaron elementos comunes para todas las secciones*/
-	/*a partir de aca se estilizan elementos especificos del index.html*/
+
+/*a partir de aca se estilizan elementos especificos del index.html*/
 .inicio section{
 	display: block;
 	
 }
-.inicio div.fondo{ 
+.inicio div.fondo{ /* estilizo para todo el fondo en general para decirle que las imagenes esten hubicadas una al lado de la otra*/
 	height: 100vh;
 	display: flex;
 	justify-content: space-between;
@@ -76,7 +77,7 @@ nav li:first-child{
 	flex-grow: 1;
 	list-style: none;
 }
-.inicio div.fondo a{
+.inicio div.fondo a{ /* estilizo los 3 enlaces (imagenes de fondo) general y despues voy a lo especifico*/
 	display: block;
 	height: 100vh;
 	background: url(../img/01index.jpeg) no-repeat center;
@@ -90,17 +91,18 @@ nav li:first-child{
 	transition: transform 0.9s;
 }
 
-.inicio div.fondo section:first-child a{
+.inicio div.fondo section:first-child a{ /* aca me centro en la primera imagen que se ve en el index */
 	background: url(../img/02index.jpeg) no-repeat center;
 	color: #333;
 	background-size: 130%;
 }
-.inicio div.fondo section:last-child a{
+.inicio div.fondo section:last-child a{ /* aca me centro en la ultima imagen que se ve en el index */
 	background: url(../img/03index.jpeg) no-repeat center;
 	color: #333;
 	background-size: 130%;
 }
-.inicio div.fondo a:hover {
+.inicio div.fondo a:hover { /* lo que digo aca y en los siguientes dos bloques, es que al pasar el cursor por las imagenes,
+								se haga una transormacion de escala, donde la imagen se agrande en 1.1 */
 	transform: scale(1.1);
 }
 .inicio div.fondo section:first-child a:hover {
@@ -109,20 +111,13 @@ nav li:first-child{
 .inicio div.fondo section:last-child a:hover {
 	transform: scale(1.1);
 }
-.inicio div.fondo span{
+.inicio div.fondo span{	/*aca lo que estilizo con las palabras que aparecen junto a las imagenes de fondo. */
 	position: absolute;
 	bottom: 120px;
 	left: 50px;
 	font-weight: 400;
 }
-
-.inicio section div.fondo span::before{
-	background-color: yellow;
-	position: absolute;
-	top: -5px;
-	left: -5px;
-}
-
+/*los 4 bloques que siguen, son para estilizar el footer y los enlaces dentro de este que redirigen a otras paginas web.*/
 footer{
 	position: fixed;
 	z-index: 1;
@@ -154,7 +149,7 @@ footer a{
 }
 
 /*ESTILO PARA LA SECCION: CATALOGO*/
-
+/*a partir de aca se estiliza la galería de fotos, las imagenes dentro de la galería*/
 .catalogo .galeria{
 	width: 900px;
 	display: grid;
@@ -168,6 +163,8 @@ footer a{
 	display: block;
 	width: 100%;
 }
+/*en los 4 bloques siguientes lo que hago es ponerle un filtro de greyscal a las fotos y le digo con el hover
+que al pasar el cursor las imagenes vuelvan a su color normal*/
 .catalogo .galeria img{
 	filter: grayscale(80%);
 	transition: filter 0.9s;
@@ -182,6 +179,7 @@ footer a{
 .catalogo .galeria a:hover img{
 	transform: scale(1.1);
 }
+/*aca estoy estilizando la modal, la cual en ppio le digo que no se vea*/
 .modal{
 	display: none;
 	align-items: center;
@@ -208,13 +206,13 @@ footer a{
 }
 
 
-.visible{
+.visible{ /* esta es la clase que voy a usar el JS para que se vea la modal */
 	display: flex;
 	flex-wrap: nowrap;
 }
 
 /*ESTILO PARA LA SECCION: Sobre Croquier*/
-.contenido{
+.contenido{ /*estilizo bloque que contiene las section con clase:  texto e imagenes*/
 	height: 600px;
 	display: flex;
 	justify-content: space-between;
@@ -240,8 +238,10 @@ footer a{
 .sobre_croquier section.imagenes img{
 	width: 300px;
 }
+
 /*ESTILO PARA LA SECCION: CONTACTO*/
-.contacto .contenedor{
+
+.contacto .contenedor{ /*aca estilizo al contenedor que tiene las section:  imagenescontacto y formulario*/
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -277,10 +277,10 @@ footer a{
 	margin: 0 20px;
 	flex-grow: 1;
 }
-.contacto input[type="text"]{
-	-webkit-appearance: none;
+.contacto input[type="text"]{ /*estilizo todos los input que tienen tipo texto. */
+	-webkit-appearance: none; /*les saco el estilo que tienen por default del navegador*/
 	appearance: none;
-		font-family: Lato, sans-serif;
+	font-family: Lato, sans-serif;
 	font-weight: 300;
 	width: 100%;
 	border: none;
@@ -290,12 +290,11 @@ footer a{
 	margin-bottom: 5px;
 	color: grey;
 }
-.contacto .segundoForm input[type="text"]{
+.contacto .segundoForm input[type="text"]{ /*estilizo especificamente el input de tipo text que esta dentro de la clase .segundoForm*/
 	border: 1px dashed #333;
 	height: 200px;
-	text-align: left,top;
 }
-.contacto input[type="submit"]{
+.contacto input[type="submit"]{ /*estilizo el input de tipo submit y le saco el estilo por default tambien*/
 	-webkit-appearance: none;
 	appearance:  none;
 	cursor: pointer;
@@ -307,28 +306,25 @@ footer a{
 	background: none;
 	color: grey;
 }
-.contacto ::placeholder{
-	color: grey;
-}
 
 
-
-/*MEDIA QUERYIES*/
-@media screen and (max-width:  1080px){
+/*MEDIA QUERYIES*//*generé las adaptaciones requeridas por el diseño de la pagina a las diferentes medidas*/
+@media screen and (max-width:  1080px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 1080px*/
+											/*adapto unicamente las imagenes de la seccion sobre_croquier*/
 	.sobre_croquier section.imagenes img{
 		width: 230px;
 	}
 }
-@media screen and (max-width:  1027px){
-	.contacto .contenedor img{
+@media screen and (max-width:  1027px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 1027px*/
+	.contacto .contenedor img{ /*adapto el tamaño de las imagenes en la seccion contacto*/
 		width: 300px;
 	}
-	.contacto form{
+	.contacto form{ /*adapto el tamaño del formulario*/
 		width: 550px;
 	}
 }
-@media screen and (max-width: 1000px){
-	.catalogo .galeria{
+@media screen and (max-width: 1000px){/*estilizo para adaptar el diseño a pantallas menores o iguales a 1000px*/
+	.catalogo .galeria{ /*adapto el tamaño de la grilla de imagenes, cambio a 4 columnas*/
 		width: 800px;
 		grid-template-columns: repeat(4, auto);
 		top: 180px;
@@ -337,45 +333,46 @@ footer a{
 	
 }
 
-@media screen and (max-width: 900px){
-	.inicio div.fondo span{
+@media screen and (max-width: 900px){/*estilizo para adaptar el diseño a pantallas menores o iguales a 900px*/
+	.inicio div.fondo span{ /*adapto y achico las palabras del fondo del inicio*/
 		margin: 60vh 30px 0; 
 		font-size: 1em;
 	}
-	.contacto form{
+	.contacto form{ /*achico el formulario*/
 		height: 250px;
 		width: 500px;
 	}
-	.contacto h2{
+	.contacto h2{ /*achico el tamaño de titulo segundario de la seccion de contacto*/
 		font-size: 1.2em;
 	}
 
 	.inicio div.fondo{
 		display: block;
 	}
-	.catalogo .galeria{
+	.catalogo .galeria{ /*achico la grilla de imagenes en la cantidad de columnas*/
 		width: 700px;
 		grid-template-columns: repeat(3, auto);
 		top: 180px;
 		margin: 0 auto;
 	}
 }
-@media screen and (max-width: 880px){
-	.contenido{
+@media screen and (max-width: 880px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 880px*/
+	.contenido{ /*cambio la direcion del flex, para que las cosas esten uno abajo de la otra*/
 		flex-direction: column;
 		padding-top: 80px;
 	}
-	.imagenes{
+	.sobre_croquier .imagenes{ /*al contenedor de las imagenes le digo que sea flex y por default row, asi estan una imagen al lado de la otra*/
 		display: flex;
 	}
-	.sobre_croquier section.imagenes img{
+	.sobre_croquier section.imagenes img{ /*achico las imagenes*/
 		width: 280px;
 	}
-	.contenido h2{
+	.sobre_croquier .contenido h2{ /*achico el titulo secundario de la seccion sobre croquier.*/
 		font-size: 3em;
 	}
 }
-@media screen and (max-width: 850px){
+@media screen and (max-width: 850px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 850px*/
+										/*le digo al contenedor de la seccion contacto que cambie la direccion del flex. tambien cambio el tamaño de las imagenes*/
 	.contacto .contenedor{
 		flex-direction: column-reverse;
 		justify-content: space-between;
@@ -385,13 +382,14 @@ footer a{
 		width: 400px;
 	}
 }
-@media screen and (max-width: 800px){
-	.catalogo .galeria{
+@media screen and (max-width: 800px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 800px*/
+	.catalogo .galeria{ /*vuelvo a achicar la galería de fotos*/
 		width: 500px;
 		grid-template-columns: repeat(3, auto);
 	}
 }
-@media screen and (max-width: 750px){
+@media screen and (max-width: 750px){/*estilizo para adaptar el diseño a pantallas menores o iguales a 750px*/
+										/*adapto la modal achicandola junto a las flechas.*/
 	.modal img{
 		width: 400px;
 	}
@@ -400,7 +398,9 @@ footer a{
 	}
 
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 700px*/
+							/*en esta medida es donde aparece el menu desplegable, entonces lo que hago es estilizar todo de manera que 
+							quede fuera de pantalla y luego en desplegado que vuelva a aparecer. eso lo voy a usar luego en JS*/
 	nav{
 		position: fixed;
 		top: -100vh;
@@ -435,7 +435,7 @@ footer a{
 		letter-spacing: -4px;
 		margin-bottom: 20px;
 	}
-	.cerrar{
+	.cerrar{	/*estilizo el boton para cerrar el menu desplegable, la x*/
 		display: block;
 		position: absolute;
 		top: 20px;
@@ -444,7 +444,7 @@ footer a{
 		text-decoration: none;
 		color: white;
 	}
-	.abrir{
+	.abrir{ /*estilizo el menu hamburguesa*/
 		display: block;
 		width: 30px;
 		border: 1px solid #333;
@@ -452,7 +452,7 @@ footer a{
 		border-radius: 5px;
 		margin-right: 30px;
 	}
-	.abrir span{
+	.abrir span{ /*estilizo lo que compone el menu hamburguesa, las 3 lineas*/
 		display: block;
 		height: 3px;
 		background-color: #333;
@@ -461,22 +461,22 @@ footer a{
 	}
 }
 
-@media screen and (max-width: 650px){
-	.texto{
+@media screen and (max-width: 650px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 650px*/
+	.sobre_croquier .texto{ /*achico el contenedor con clase texto de la seccion sobre croquier*/
 		width: 550px;
 	}
-	.sobre_croquier section.imagenes img{
+	.sobre_croquier section.imagenes img{ /*achico las imagenes de la seccion sobre croquier*/
 		width: 250px;
 	}
-	.catalogo .galeria{
-		width: 200px;
-		grid-template-columns: repeat(1, auto);
+	.catalogo .galeria{ /*achico la galeria y le dejo dos columnas*/
+		width: 400px;
+		grid-template-columns: repeat(2, auto);
 	}
-	.contacto section{
+	.contacto section{ /*la muevo de lugar*/
 		top: 150px;
 		margin: 0 auto;
 	}
-	.contacto form{
+	.contacto form{ /*achico el formulario de contacto y lo cambio de direccion para que queden los elementos una abajo de la otra*/
 		height: 400px;
 		flex-direction: column;
 		align-items: stretch;
@@ -490,41 +490,41 @@ footer a{
 	}
 }
 
-@media screen and (max-width: 600px){
-	.catalogo .galeria{
-		width: 400px;
-		grid-template-columns: repeat(2, auto);
+@media screen and (max-width: 600px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 600px*/
+	.catalogo .galeria{ /*achico la galeria y le dejo una sola columna*/
+		width: 200px;
+		grid-template-columns: repeat(1, auto);
 	}
-	.modal img{
+	.modal img{ /*achico imagen de modal*/
 		width: 350px;
 	}
-	.modal a{
+	.modal a{ /*achico flechas de modal*/
 		font-size: 5em;
 	}
-	.texto{
+	.sobre_croquier .texto{ /*achico el contenedor con clase texto */
 		width: 450px;
 		padding-right: 0;
 	}
-	.imagenes{
+	.sobre_croquier .imagenes{ /*cambio la direccion del flex para que las imagenes estan una abajo de la otra*/
 		display: flex;
 		flex-direction: column;
 	}
-	.sobre_croquier section.imagenes img{
+	.sobre_croquier section.imagenes img{ /*cambio tamaño de imagenes*/
 		width: 280px;
 	}
-	.contenido h2{
+	.contenido h2{ /*cambio tamaño del titulo secundario de la seccion sobre croquier*/
 		font-size: 2.5em;
 		padding-left: 10px;
 	}
 }
 
-@media screen and (max-width: 560px){
-	.contacto form{
+@media screen and (max-width: 560px){ /*estilizo para adaptar el diseño a pantallas menores o iguales a 560px*/
+	.contacto form{ /*achico tamaño del formulario*/
 		width: 400px;
 	}
 }
-@media screen and (max-width: 500px){
-
+@media screen and (max-width: 500px){ /*estilizo para adaptar el diseño a pantallas 500px*/
+							/*achico el tamaño de imagen de la modal y de las flecha de costado*/
 	.modal img{
 		width: 200px;
 	}
@@ -532,6 +532,3 @@ footer a{
 		font-size: 3em;
 	}
 }
-
-/*VER SI HACER PARA 500PX PARA ABAJO*/
-

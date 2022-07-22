@@ -3,12 +3,12 @@
 const navegacion = document.querySelector("nav");
 const botones = document.querySelectorAll(".abrir,.cerrar");
 
-
+//esta funcion le va a agregar o sacar la clase "desplegado" a la navegacion depende lo que necesite. 
 function toggleNavegacion(evento){
 	evento.preventDefault();
 	navegacion.classList.toggle("desplegado");
 };
-
+//por cada boton, dentro de la const botones, me genere una funcion que al hacer click se invoque la funcion de toggleNavegacion
 botones.forEach(function(boton){
 	boton.addEventListener("click",toggleNavegacion);
 });
@@ -22,22 +22,25 @@ const flechas = document.querySelectorAll(".modal a")
 let imagenActual = 0; //esta variable define qué imagen estamos viendo en grande
 let rutasImagenes = [];
 
+/*le estoy pidiendo que por cada imagen, primero me vaya guardando al hacer click en la imagenes pequeñas*/
 miniaturas.forEach(function(miniatura,indice){
 	rutasImagenes.push(miniatura.getAttribute("href"));
 	miniatura.addEventListener("click", function(evento){
-		evento.preventDefault(); //lo pongo dentro del addEvenLÑistener
+		evento.preventDefault(); 
 		imagenActual = indice
 		imgModal.setAttribute("src", rutasImagenes[imagenActual]);
 		modal.classList.add("visible");
 	})
 	
 });
-
+//bloque de codigo para que desaparezca la modal al hacer click en ella.
 if(modal){
 	modal.addEventListener("click", function(){
 		modal.classList.remove("visible");
 	});
-	
+
+/*bloque de codigo en el que hago que al apretar las flechas se vayan pasando las imagenes 
+y nunca se termine de pasar, que no se corte en el primero y el ultimo*/
 flechas.forEach(function(flecha,indice){
 	flecha.addEventListener("click", function(evento){
 		evento.preventDefault();
