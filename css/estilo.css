@@ -20,6 +20,8 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 1;
 	background-color: white;
 }
@@ -50,14 +52,17 @@ nav li a{
 	font-weight: 400;
 	cursor: pointer;
 }
+
 .abrir,.cerrar{
 	display: none;
 }
+	/*Hasta aca se estilizaron elementos comunes para todas las secciones*/
+	/*a partir de aca se estilizan elementos especificos del index.html*/
 .inicio section{
 	display: block;
 	
 }
-.inicio div.fondo{
+.inicio div.fondo{ 
 	height: 100vh;
 	display: flex;
 	justify-content: space-between;
@@ -78,6 +83,8 @@ nav li a{
 	color: #333;
 	text-transform: lowercase;
 	position: relative;
+	transform: scale(1);
+	transition: transform 0.9s;
 }
 
 .inicio div.fondo section:first-child a{
@@ -90,11 +97,19 @@ nav li a{
 	color: #333;
 	background-size: 130%;
 }
+.inicio div.fondo a:hover {
+	transform: scale(1.1);
+}
+.inicio div.fondo section:first-child a:hover {
+	transform: scale(1.1);
+}
+.inicio div.fondo section:last-child a:hover {
+	transform: scale(1.1);
+}
 .inicio div.fondo span{
 	position: absolute;
 	bottom: 120px;
 	left: 10px;
-	border: 1px solid black ;
 	font-weight: 400;
 }
 
@@ -197,11 +212,14 @@ footer a{
 
 /*ESTILO PARA LA SECCION: Sobre Croquier*/
 .contenido{
-	position: absolute;
-	width: 600px;
-	margin-top: 130px; /*chequear por que esta raro*/
-	margin-left: 100px; /*chequear por que esta raro*/
-	padding-bottom:50px;
+	height: 600px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 60px 30px 30px 30px;
+}
+.texto{
+	padding-right: 40px;
 }
 .contenido h2{
 	color: #333;
@@ -209,13 +227,16 @@ footer a{
 	font-weight: 300;
 	position: relative;
 	top: 10px;
-	left: -60px;
 	z-index: -1;
 }
 .contenido p{
 	margin-top: 10px;
+	margin-left: 20px;
 }
 
+.sobre_croquier section.imagenes img{
+	width: 300px;
+}
 /*ESTILO PARA LA SECCION: CONTACTO*/
 .contacto section{
 	position: absolute;
@@ -281,6 +302,12 @@ footer a{
 
 
 /*MEDIA QUERYIES*/
+@media screen and (max-width:  1080px){
+	.sobre_croquier section.imagenes img{
+		width: 230px;
+	}
+}
+
 @media screen and (max-width: 1000px){
 	.catalogo .galeria{
 		width: 800px;
@@ -288,14 +315,12 @@ footer a{
 		top: 180px;
 		margin: 0 auto;
 	}
+	
 }
 
 @media screen and (max-width: 900px){
 	.inicio div.fondo span{
-		position: absolute;
-		margin: 50vh 50px; /*ver como centrar los titulitos*/
-		border: 1px solid black ;
-		font-weight: 400;
+		margin: 60vh 30px 0; 
 		font-size: 1em;
 	}
 	.contacto form{
@@ -317,16 +342,18 @@ footer a{
 	}
 }
 @media screen and (max-width: 880px){
-	
 	.contenido{
-		width: 500px;
-		margin-top: 130px; /*chequear por que esta raro*/
-		margin-left: 115px; /*chequear por que esta raro*/
+		flex-direction: column;
+		padding-top: 80px;
+	}
+	.imagenes{
+		display: flex;
+	}
+	.sobre_croquier section.imagenes img{
+		width: 280px;
 	}
 	.contenido h2{
 		font-size: 3em;
-		top: 10px;
-		left: -60px;
 	}
 }
 @media screen and (max-width: 800px){
@@ -406,15 +433,11 @@ footer a{
 }
 
 @media screen and (max-width: 650px){
-	.contenido{
-		width: 400px;
-		margin-top: 100px; /*chequear por que esta raro*/
-		margin-left: 90px; /*chequear por que esta raro*/
+	.texto{
+		width: 550px;
 	}
-	.contenido h2{
-		font-size: 2em;
-		top: 10px;
-		left: -44px;
+	.sobre_croquier section.imagenes img{
+		width: 250px;
 	}
 }
 
@@ -429,16 +452,26 @@ footer a{
 	.modal a{
 		font-size: 5em;
 	}
+	.texto{
+		width: 450px;
+		padding-right: 0;
+	}
+	.imagenes{
+		display: flex;
+		flex-direction: column;
+	}
+	.sobre_croquier section.imagenes img{
+		width: 280px;
+	}
+	.contenido h2{
+		font-size: 2.5em;
+		padding-left: 10px;
+	}
 
 @media screen and (max-width: 500px){
 	.catalogo .galeria{
 		width: 200px;
 		grid-template-columns: repeat(1, auto);
-	}
-	.contenido{
-		width: 300px;
-		margin-top: 100px; /*chequear por que esta raro*/
-		margin-left: 60px; /*chequear por que esta raro*/
 	}
 	.contacto section{
 		top: 150px;

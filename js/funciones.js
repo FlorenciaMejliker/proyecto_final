@@ -33,7 +33,8 @@ miniaturas.forEach(function(miniatura,indice){
 	
 });
 
-modal.addEventListener("click", function(){
+if(modal){
+	modal.addEventListener("click", function(){
 		modal.classList.remove("visible");
 	});
 	
@@ -48,5 +49,5 @@ flechas.forEach(function(flecha,indice){
 			imagenActual = imagenActual < rutasImagenes.length - 1 ? imagenActual + 1 : 0;
 		}
 		imgModal.setAttribute("src",rutasImagenes[imagenActual]);
-	})
-})
+	});
+})};
