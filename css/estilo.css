@@ -52,6 +52,9 @@ nav li a{
 	font-weight: 400;
 	cursor: pointer;
 }
+nav li:first-child{
+	display: none;
+}
 
 .abrir,.cerrar{
 	display: none;
@@ -109,7 +112,7 @@ nav li a{
 .inicio div.fondo span{
 	position: absolute;
 	bottom: 120px;
-	left: 10px;
+	left: 50px;
 	font-weight: 400;
 }
 
@@ -238,10 +241,19 @@ footer a{
 	width: 300px;
 }
 /*ESTILO PARA LA SECCION: CONTACTO*/
-.contacto section{
-	position: absolute;
+.contacto .contenedor{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 70px 30px 30px 30px;
+}
+
+.contacto .contenedor img{
+	width: 330px;
+}
+.contacto section section.formulario{
 	top: 180px;
-	right: 50px;
+	right: 15px;
 }
 .contacto h2{
 	padding: 10px;
@@ -250,7 +262,7 @@ footer a{
 }
 .contacto form{
 	height: 250px;
-	width: 700px;
+	width: 650px;
 	padding: 20px;
 	display: flex;
 	justify-content: space-around;
@@ -307,7 +319,14 @@ footer a{
 		width: 230px;
 	}
 }
-
+@media screen and (max-width:  1027px){
+	.contacto .contenedor img{
+		width: 300px;
+	}
+	.contacto form{
+		width: 550px;
+	}
+}
 @media screen and (max-width: 1000px){
 	.catalogo .galeria{
 		width: 800px;
@@ -356,6 +375,16 @@ footer a{
 		font-size: 3em;
 	}
 }
+@media screen and (max-width: 850px){
+	.contacto .contenedor{
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		padding: 100px 30px 30px 30px;
+	}
+	.contacto .contenedor img{
+		width: 400px;
+	}
+}
 @media screen and (max-width: 800px){
 	.catalogo .galeria{
 		width: 500px;
@@ -372,13 +401,6 @@ footer a{
 
 }
 @media screen and (max-width: 700px){
-	.contacto form{
-		height: 250px;
-		width: 400px;
-	}
-	.inicio div.fondo{
-			/*estiulizar el fondo en columna*/
-	}
 	nav{
 		position: fixed;
 		top: -100vh;
@@ -395,9 +417,9 @@ footer a{
 	nav ul{
 		display: block;
 	}
-	nav li{
-		font-size: 1.8em;
-		margin-right: 10px;
+	nav li:not(:first-child){
+		font-size: 1.7em;
+		margin-left: 20px;
 		margin-top: 20px;
 	}
 	nav li:not(:first-child){
@@ -405,6 +427,13 @@ footer a{
 	}
 	nav li a{
 		color: white;
+	}
+	nav li:first-child{
+		display: list-item;
+		font-size: 3em;
+		font-family: 'Cutive Mono', monospace;
+		letter-spacing: -4px;
+		margin-bottom: 20px;
 	}
 	.cerrar{
 		display: block;
@@ -439,6 +468,26 @@ footer a{
 	.sobre_croquier section.imagenes img{
 		width: 250px;
 	}
+	.catalogo .galeria{
+		width: 200px;
+		grid-template-columns: repeat(1, auto);
+	}
+	.contacto section{
+		top: 150px;
+		margin: 0 auto;
+	}
+	.contacto form{
+		height: 400px;
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.contacto form div{
+		align-items: center;
+	}
+	.contacto input[type="submit"]{
+		margin-top: 10px;
+		padding: 15px;
+	}
 }
 
 @media screen and (max-width: 600px){
@@ -467,29 +516,15 @@ footer a{
 		font-size: 2.5em;
 		padding-left: 10px;
 	}
+}
 
-@media screen and (max-width: 500px){
-	.catalogo .galeria{
-		width: 200px;
-		grid-template-columns: repeat(1, auto);
-	}
-	.contacto section{
-		top: 150px;
-		margin: 0 auto;
-	}
+@media screen and (max-width: 560px){
 	.contacto form{
-		height: 400px;
-		flex-direction: column;
+		width: 400px;
+	}
+}
+@media screen and (max-width: 500px){
 
-		align-items: stretch;
-	}
-	.contacto form div{
-		align-items: center;
-	}
-	.contacto input[type="submit"]{
-		margin-top: 10px;
-		padding: 15px;
-	}
 	.modal img{
 		width: 200px;
 	}
